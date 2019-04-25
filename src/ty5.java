@@ -1,0 +1,2 @@
+public class ty5 {
+}
