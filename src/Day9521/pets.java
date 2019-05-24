@@ -1,4 +1,4 @@
-package Day001;
+package Day9521;
 
 public class pets {
     public static void main(String[] args) {
