@@ -8,6 +8,6 @@ public class 逆置正整数 {
         Scanner sc=new Scanner(System.in);
         a=sc.nextInt();
         System.out.println(a);
-
+        System.out.println("so?");
     }
 }
