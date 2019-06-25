@@ -9,6 +9,6 @@ public class Test {
         list.add("aaa");
         list.add("bbb");
         System.out.println(list.get(0));
-        list.
+
     }
 }
