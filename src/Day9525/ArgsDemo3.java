@@ -27,3 +27,5 @@ public class ArgsDemo3 {
         System.out.println(ad.plus(1,2,3));
     }
 }
+
+

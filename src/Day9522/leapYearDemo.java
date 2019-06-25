@@ -1,7 +1,6 @@
 package Day9522;
 
 import java.util.Scanner;
-
 public class leapYearDemo {
     public static void main(String[] args) {
         System.out.println("请输入年份：");

@@ -1,5 +1,6 @@
 package Day9522;
 
+
 import java.util.Scanner;
 
 //一个猜数字游戏

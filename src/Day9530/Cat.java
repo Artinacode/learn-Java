@@ -25,3 +25,4 @@ public class Cat {
         System.out.println("吃了一口");
     }
 }
+

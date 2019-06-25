@@ -3,7 +3,7 @@ package Day9522;
 import java.util.Scanner;
 
 public class MethodDemo {
-    public  void printStar(){
+    public  static void printStar(){
         System.out.println("*************************");
     }
 
