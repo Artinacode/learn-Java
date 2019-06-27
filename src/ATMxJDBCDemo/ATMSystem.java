@@ -82,8 +82,7 @@ public class ATMSystem {
 
     public void begin() {
 
-
-        /////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////
         System.out.println("欢迎使用东软ATM自动提款机");
         System.out.println("请选择以下功能：1.注册账户 2.登陆系统");
         int  sw = input.nextInt();
