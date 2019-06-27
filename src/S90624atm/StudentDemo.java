@@ -1,4 +1,4 @@
-package Shixun90624;
+package S90624atm;
 
 public class StudentDemo {
     private String name;

@@ -1,4 +1,4 @@
-package Shi90625;
+package S90625;
 
 public class animal {
     public void eat(){

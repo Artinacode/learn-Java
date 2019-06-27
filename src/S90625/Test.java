@@ -1,4 +1,4 @@
-package Shi90625;
+package S90625;
 
 public class Test {
     public static void main(String[] args) {

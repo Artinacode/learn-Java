@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Collection;
 
 public class test {
     public static void main(String[] args) {
@@ -29,16 +30,23 @@ public class test {
             /**
              * 执行SQL语句
              */
-           // stmt.executeUpdate("insert into uus (uname,upass) values ('admin','999')" );
+           //stmt.executeUpdate("insert into uus (uname,upass) values ('高半仙儿','88888')" );
             ResultSet rs = stmt.executeQuery("select * from uus");
+            while(rs.next()){
+                System.out.println("ID:" + rs.getInt("id"));
+                System.out.println("name:"+ rs.getString("uname"));
+                System.out.println("password:" + rs.getString("upass"));
+                System.out.println();
+            }
 
             /**
              * 处理结果集(针对查询操作)
              */
-            
+
             /**
              * 关闭连接
              */
+            rs.close();
             stmt.close();
             conn.close();
         }catch (Exception e){
