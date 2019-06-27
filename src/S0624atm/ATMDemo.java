@@ -1,4 +1,4 @@
-package S90624atm;
+package S0624atm;
 
 import Day9522.MethodDemo;
 

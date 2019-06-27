@@ -1,4 +1,4 @@
-package S90625;
+package S0625class;
 
 public class Test2 {
 

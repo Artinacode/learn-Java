@@ -1,4 +1,4 @@
-package Test2;
+package S0625Test2;
 
 public class Weichat extends Pay{
     public void pay(){

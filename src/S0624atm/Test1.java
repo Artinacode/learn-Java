@@ -1,4 +1,4 @@
-package S90624atm;
+package S0624atm;
 
 public class Test1 {
     public static void main(String[] args) {

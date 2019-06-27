@@ -6,12 +6,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Collection;
 
-public class test {
+public class JDBCTest {
     public static void main(String[] args) {
-       // String username = "root";
-        //String password = "123456";
+            String user="PPp" ;
+            String pass ;
         try{
             /**
              * 加载数据库驱动
@@ -30,7 +29,7 @@ public class test {
             /**
              * 执行SQL语句
              */
-           //stmt.executeUpdate("insert into uus (uname,upass) values ('高半仙儿','88888')" );
+           stmt.executeUpdate("insert into uus (uname,upass,uid) values ('"+user+"','88888','1111')" );
             ResultSet rs = stmt.executeQuery("select * from uus");
             while(rs.next()){
                 System.out.println("ID:" + rs.getInt("id"));

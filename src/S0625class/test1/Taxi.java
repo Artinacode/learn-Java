@@ -1,4 +1,4 @@
-package S90625.test1;
+package S0625class.test1;
 //子类  出租车
 public class Taxi extends Che{
     public void go(){

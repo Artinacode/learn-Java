@@ -1,4 +1,4 @@
-package Test2;
+package S0625Test2;
 
 public class Alipay extends Pay{
     public void pay(){
