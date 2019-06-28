@@ -8,6 +8,6 @@ package S0628JDBC模式N1;
 // DAO层只操作数据库
 public class DataBaseDAO {
     public boolean login(int mypwd){
-
+        return true;
     }
 }
