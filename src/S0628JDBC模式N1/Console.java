@@ -1,9 +1,7 @@
-package S0628;
+package S0628JDBC模式N1;
 
 import S0627JDBC.SignDemo;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Console {

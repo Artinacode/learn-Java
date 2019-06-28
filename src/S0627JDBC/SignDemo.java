@@ -63,7 +63,7 @@ public class SignDemo {
              * 创建数据库连接
              */
             Connection conn = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/test", "root", "");
+                    ("jdbc:mysql://localhost:3306/test", "root", "123456");
             /**
              * 创建数据库执行对象
              */
@@ -118,7 +118,7 @@ public class SignDemo {
              * 创建数据库连接
              */
             Connection conn = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/test", "root", "");
+                    ("jdbc:mysql://localhost:3306/test", "root", "123456");
             /**
              * 创建数据库执行对象
              */

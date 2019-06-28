@@ -13,7 +13,7 @@ public class ATMSystem {
     Scanner input = new Scanner(System.in);
     Customer cust;   //当前登录成功的用户
     /**
-     * 构造方法初始化4名顾客并存储到集合中
+     * 构造方法
      */
     public ATMSystem() {
 
