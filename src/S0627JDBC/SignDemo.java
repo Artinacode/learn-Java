@@ -6,14 +6,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class SigninDemo {
+public class SignDemo {
     Scanner sc = new Scanner(System.in);
 
-    public String getS() {
+    public int getS() {
         return s;
     }
 
-    public void setS(String s) {
+    public void setS(int s) {
         this.s = s;
     }
 
@@ -34,7 +34,7 @@ public class SigninDemo {
     }
 
     // String inn = sc.nextLine();
-    String s;
+    int s;
     String ss;
     String uname;
     public  void signin() {
@@ -47,7 +47,8 @@ public class SigninDemo {
         System.out.println("请输入您的姓名:");
         uname = sc.nextLine();
         System.out.println("请输入您要注册的账号:");
-        s = sc.nextLine();
+        s = sc.nextInt();
+        sc.nextLine();
         //System.out.println("您的账号是"+ s);
         System.out.println("请设置您的密码");
         ss = sc.nextLine();
@@ -71,48 +72,15 @@ public class SigninDemo {
             /**
              * 执行SQL语句
              */
-            stmt.executeUpdate("insert into uus (uname,upass,uid,umoney) values ('" + uname + "','" + ss + "','" + s + "',0)");
-            System.out.println("恭喜您注册成功!");
-            System.out.println("您的账号是:" + s);
-            System.out.println("您的密码是:" + ss);
-            //  ResultSet rs = stmt.executeQuery("select * from uus");
-//                    while(rs.next()){
-//                        if(rs.getString("id").equals())
-//                        {
-//                            System.out.println("ID:" + rs.getInt("id"));
-//                            System.out.println("name:"+ rs.getString("uname"));
-//                            System.out.println("password:" + rs.getString("upass"));
-//                            System.out.println();
-//                        }
-//                    }
-//                    /**
-//                     * @高亭锐大哥的登录模块
-//                     */
-//
-//                 int p=0;
-//	while (rs.next()) {
-//		if (rs.getString("uid").equals(s) && rs.getString("upass").equals(ss)) {
-//			p++;
-//			System.out.println("卡号与密码匹配");
-//		}
-//		//ilist.add(rs.getInt("aid"));
-//		//wlist.add(rs.getInt("apwd"));
-//	}
-//	if (p==0)
-//		System.out.println("卡号与密码有误请重试");
-//	for (int i=0;i<ilist.size();i++) {
-//		System.out.println("id "+ilist.get(i));
-//		System.out.println("pws "+wlist.get(i));
-//	}
-//                    while(rs.next()){
-//                        if(rs.getString("id").equals())
-//                        {
-//                            System.out.println("ID:" + rs.getInt("id"));
-//                            System.out.println("name:"+ rs.getString("uname"));
-//                            System.out.println("password:" + rs.getString("upass"));
-//                            System.out.println();
-//                        }
-//                    }
+            int count =stmt.executeUpdate("insert into uus (uname,upass,uid,umoney) values ('" + uname + "','" + ss + "','" + s + "',0)");
+            if(count>0){
+                System.out.println("恭喜您注册成功!");
+
+                System.out.println("您的账号是:" + s);
+                System.out.println("您的密码是:" + ss);
+            }else {
+                System.out.println("注册失败！！！");
+            }
 
             /////////////////
             /**
@@ -129,8 +97,6 @@ public class SigninDemo {
             System.out.println("获得数据库连接出错");
             e.printStackTrace();
         }
-        ///////////////////////////////
-
     }
 
     public  boolean signup() {
@@ -138,7 +104,8 @@ public class SigninDemo {
         //Scanner sc = new Scanner(System.in);
        // String inn = sc.nextLine();
         System.out.println("请输入账号");
-        s = sc.nextLine();
+        s = sc.nextInt();
+        sc.nextLine();
         System.out.println("请输入密码");
         ss = sc.nextLine();
 
@@ -161,37 +128,27 @@ public class SigninDemo {
              * 执行SQL语句
              */
 
-            ResultSet rs = stmt.executeQuery("select * from uus");
+            ResultSet rs = stmt.executeQuery("select * from uus where uid = "+s+" and upass = '"+ss+"'");
+
             /**
-             * @高亭锐大哥的登录模块
+             * 登陆的【笨】方法
              */
-
-            int p = 0;
-            while (rs.next()) {
-                if (rs.getString("uid").equals(s) && rs.getString("upass").equals(ss)) {
-                    p++;
-                    System.out.println("登陆成功,请稍后...");
-                    fg = true;
-                }
-                //ilist.add(rs.getInt("aid"));
-                //wlist.add(rs.getInt("apwd"));
+ //           int p = 0;
+//            while (rs.next()) {
+//                if (rs.getInt("uid")==s && rs.getString("upass").equals(ss)) {
+//                    p++;
+//                    System.out.println("登陆成功,请稍后...");
+//                    fg = true;
+//                }
+            /**
+             * 登陆的优化方法
+             */
+            if(rs.next()){
+                System.out.println("登陆成功,请稍后...");
+                fg = true;
             }
-            if (p == 0)
-                System.out.println("卡号与密码有误请重试");
-//	for (int i=0;i<ilist.size();i++) {
-//		System.out.println("id "+ilist.get(i));
-//		System.out.println("pws "+wlist.get(i));
-//	}
-//                    while(rs.next()){
-//                        if(rs.getString("id").equals())
-//                        {
-//                            System.out.println("ID:" + rs.getInt("id"));
-//                            System.out.println("name:"+ rs.getString("uname"));
-//                            System.out.println("password:" + rs.getString("upass"));
-//                            System.out.println();
-//                        }
-//                    }
-
+            if (!fg)
+                System.out.println("卡号/密码有误,请重试");
             /////////////////
             /**
              * 处理结果集(针对查询操作)
@@ -209,7 +166,6 @@ public class SigninDemo {
         }
         ///////////////////////////////
         return fg;
-
     }
 
 }

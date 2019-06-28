@@ -1,12 +1,10 @@
 package ATMxJDBCDemo;
 
-import S0627JDBC.SigninDemo;
-
+import S0627JDBC.SignDemo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ATMSystem {
@@ -82,69 +80,21 @@ public class ATMSystem {
 
     public void begin() {
 
-        //////////////////////////////////////////////
+
+        /////////////////////////////////////////////////////////////////////
         System.out.println("欢迎使用东软ATM自动提款机");
         System.out.println("请选择以下功能：1.注册账户 2.登陆系统");
         int  sw = input.nextInt();
         switch (sw){
             case 1:
-                SigninDemo si =new SigninDemo();
+                SignDemo si =new SignDemo();
                 si.signin();
                 begin();
             case 2:
-                SigninDemo su =new SigninDemo();
+                SignDemo su =new SignDemo();
                 if(su.signup()) {
-                    ////////////////////
-                    try{
-                        /**
-                         * 加载数据库驱动
-                         */
-                        Class.forName("org.gjt.mm.mysql.Driver");
-                        /**
-                         * 创建数据库连接
-                         */
-                        Connection conn = DriverManager.getConnection
-                                ("jdbc:mysql://localhost:3306/test","root","");
-                        /**
-                         * 创建数据库执行对象
-                         */
-                        //System.out.println("连接成功？");
-                        Statement stmt = conn.createStatement();
-                        /**
-                         * 执行SQL语句
-                         */
-                       // stmt.executeUpdate("insert into uus (uname,upass,uid) values ('"+user+"','88888','1111')" );
-                        ResultSet rs = stmt.executeQuery("select * from uus where ");
-                       // while(rs.next()){
-                            int curm;
-                            //if(rs.getString("uid").equals(su.getS())){
-
-                               // int a;
-                               // a=rs.getInt("umoney");
-                                //cust.setMoney(a);
-                                //cust.getId(rs.getString("uid"));
-                              //  cust.getUsername(rs.getString("uname"));
-                           // }
-                         //   System.out.println(rs.getString("uid"));
-
-                        //}
-
-                        /**
-                         * 处理结果集(针对查询操作)
-                         */
-
-                        /**
-                         * 关闭连接
-                         */
-                        rs.close();
-                        stmt.close();
-                        conn.close();
-                    }catch (Exception e){
-                        System.out.println("获得数据库连接出错");
-                        e.printStackTrace();
-                    }
-                    ////////////////////
-
+                    //////////////
+                    //////////////
                     //显示功能菜单
                     int num = 0;
                     while(num != 5) {
@@ -171,8 +121,7 @@ public class ATMSystem {
                         }
                     }
                 }else {
-                    //登录失败
-                    System.out.println("卡号、密码错误,登录失败！");
+                   begin();
                 }
                 break;
 

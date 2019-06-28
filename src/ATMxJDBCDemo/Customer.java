@@ -1,7 +1,7 @@
 package ATMxJDBCDemo;
 
 public class Customer {
-    private String id ; 		//卡号
+    private int id ; 		//卡号
     private String pwd ;		//密码
     private String username ;//姓名
     private int money ; 		//余额
@@ -10,7 +10,7 @@ public class Customer {
         // TODO Auto-generated constructor stub
     }
 
-    public Customer(String id, String pwd, String username, int money) {
+    public Customer(int id, String pwd, String username, int money) {
         this.id = id;
         this.pwd = pwd;
         this.username = username;
@@ -18,11 +18,11 @@ public class Customer {
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
