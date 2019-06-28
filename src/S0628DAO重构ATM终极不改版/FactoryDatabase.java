@@ -11,7 +11,7 @@ public class FactoryDatabase {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
             conn = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/test", "root", "123456");
+                    ("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8", "root", "123456");
         }catch (Exception e){
             e.printStackTrace();
         }

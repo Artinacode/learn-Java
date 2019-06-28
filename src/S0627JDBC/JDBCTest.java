@@ -16,7 +16,7 @@ public class JDBCTest {
             /**
              * 创建数据库连接
              */
-            Connection conn = DriverManager.getConnection
+            Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
                     ("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8","root","123456");
 
 
