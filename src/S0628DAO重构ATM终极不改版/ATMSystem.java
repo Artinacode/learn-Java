@@ -70,7 +70,7 @@ public class ATMSystem {
 
     }
     public  void begin(){
-        System.out.println("欢迎使用山理犇客ATM系统");
+        System.out.println("欢迎使用山理工ATM系统");
         System.out.println("1 注册 2 登录 3 退出系统");
         int num0;
         num0 =sc.nextInt();
@@ -103,7 +103,7 @@ public class ATMSystem {
                         case 5:
                             begin();
                         case 6:
-                            System.out.println("感谢使用山理犇客ATM");
+                            System.out.println("感谢使用山理工ATM");
                             System.out.println("再见！");
                             break;
                         default:
