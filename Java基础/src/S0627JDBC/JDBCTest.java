@@ -5,6 +5,7 @@ package S0627JDBC;
 import java.sql.*;
 
 public class JDBCTest {
+
     public static void main(String[] args) {
             String user="ddsds";
             String pass="1998" ;
@@ -16,9 +17,10 @@ public class JDBCTest {
             /**
              * 创建数据库连接
              */
+//            Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
+//                    ("jdbc:mysql://140.143.8.176:3306/xiaoxue","xiaoxue","xiaoxue");
             Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
-                    ("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8","root","123456");
-
+                  ("jdbc:mysql://localhost:3306/test","root","123456");
 
             /**
              * 创建数据库执行对象
@@ -40,7 +42,7 @@ public class JDBCTest {
             /**
              * 新时代的快递员
              */
-            String sql = "insert into detail (uname,upass,uid,umoney) values (?,?,9999,9)";
+            String sql = "insert into detail (uname,upass,uid,umoney) values (?,?,8899,9)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,user);
             pstmt.setString(2,pass);
