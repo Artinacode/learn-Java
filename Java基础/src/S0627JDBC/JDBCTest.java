@@ -19,9 +19,9 @@ public class JDBCTest {
              */
 //            Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
 //                    ("jdbc:mysql://140.143.8.176:3306/xiaoxue","xiaoxue","xiaoxue");
-            Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
-                  ("jdbc:mysql://localhost:3306/test","root","123456");
-
+//            Connection conn = DriverManager.getConnection //设置utf-8字符集，解决当写入数据库时乱码不显示中文的问题
+//                  ("jdbc:mysql://localhost:3306/test","root","123456");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://10.25.112.176:3306/telreprotform?useUicode=true&characterEncoding=UTF-8", "root", "123456");
             /**
              * 创建数据库执行对象
              */
